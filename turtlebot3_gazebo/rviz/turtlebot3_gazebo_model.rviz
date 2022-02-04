@@ -4,7 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Path1
+        - /PointStamped1
       Splitter Ratio: 0.6029411554336548
     Tree Height: 478
   - Class: rviz/Selection
@@ -190,10 +190,14 @@ Visualization Manager:
       Value: true
       Visibility:
         Axes: true
+        GlobalPlan: true
         Grid: true
         LaserScan: true
+        LocalPlan: true
         Map: true
-        Path: true
+        PointStamped: true
+        Polygon: true
+        Pose: true
         RobotModel: true
         TF: true
         Value: true
@@ -211,14 +215,38 @@ Visualization Manager:
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
+      Color: 239; 41; 41
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.029999999329447746
+      Name: LocalPlan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Queue Size: 10
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /move_base/TrajectoryPlannerROS/local_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
       Color: 25; 255; 0
       Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
       Line Style: Billboards
-      Line Width: 0.05000000074505806
-      Name: Path
+      Line Width: 0.029999999329447746
+      Name: GlobalPlan
       Offset:
         X: 0
         Y: 0
@@ -230,6 +258,71 @@ Visualization Manager:
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
       Topic: /move_base/TrajectoryPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic: /move_base/local_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: false
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic: /move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: false
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Queue Size: 10
+      Topic: /move_base/local_costmap/footprint
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Queue Size: 10
+      Topic: /move_base/global_costmap/footprint
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 0.20000000298023224
+      Shaft Radius: 0.05000000074505806
+      Shape: Arrow
+      Topic: /local_planner/robot_pose
+      Unreliable: false
+      Value: true
+    - Alpha: 0.5
+      Class: rviz/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.05000000074505806
+      Topic: /local_planner/local_goal
       Unreliable: false
       Value: true
   Enabled: true
@@ -256,12 +349,11 @@ Visualization Manager:
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
-    - ~
   Value: true
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 6.901876449584961
+      Distance: 2.1368510723114014
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -269,17 +361,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -2.286383628845215
-        Y: 0.35539180040359497
-        Z: -1.1920928955078125e-06
+        X: -1.9582650661468506
+        Y: -0.8580179810523987
+        Z: -0.11230254918336868
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3103981018066406
+      Pitch: 0.5947966575622559
       Target Frame: <Fixed Frame>
-      Yaw: 3.225398063659668
+      Yaw: 4.075411319732666
     Saved: ~
 Window Geometry:
   Camera:
